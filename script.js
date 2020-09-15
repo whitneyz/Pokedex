@@ -1,22 +1,14 @@
-const getPokemon = () => {
-fetch("https://pokeapi.co/api/v2/pokemon/12")
+function getPokemon(id) {
+fetch("https://pokeapi.co/api/v2/pokemon/"+id)
     .then(response => response.json())
-    .then(json => WhitneyIsCool(json))//actual JSON data as parameter
+    .then(json => console.log(json))//actual JSON data as parameter //hier moet mijn functie komen die de data gaat tonen op het scherm
     .catch(err => console.error(err));
 }
 
-function WhitneyIsCool (datafromindex) {
+  document.getElementById("btnJaune").addEventListener("click", function  () {
+    let Id = document.getElementById("inputIndex").value;
+    getPokemon(Id)
 
-}
-let displaySprite = document.getElementById("image");
-getPokemon();
-function indexJson () {
-  for (var i = 0; i < jason.length; i++) {  // describe function
-  }
-} // how do you call data from Json look W3SCHOOL
+});
 
-document.getElementById("btnJaune").addEventListener("click", displaySprite);
-function getPokemon () {
-document.getElementById("image").innerHTML = displaySprite ();
-}
 
